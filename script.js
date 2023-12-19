@@ -14,6 +14,7 @@ const fetchAllPlayers = async () => {
   try {
     const response = await fetch(`${APIURL}/players`);
     const result = await response.json();
+    console.log("result.data.players", result.data.players);
     return result.data.players;
   } catch (err) {
     console.error("Uh oh, trouble fetching players!", err);
@@ -66,6 +67,27 @@ const removePlayer = async (playerId) => {
  */
 const renderAllPlayers = (playerList) => {
   try {
+    // If there's no players in our data then display no players to display
+    if (!playerList || playerList.length === 0) {
+      playerContainer.innerHTML = `<h3>No players to display!</h3>`;
+      return;
+    }
+
+    let playerContainerHTML = "";
+    playerList.map((puppy) => {
+      console.log("puppy", puppy);
+      let pupHTML = `
+      <div class="single-player-card">
+      <div class="header-info">
+        <p class="pup-title">${puppy.name}</p>
+        <p class="pup-number">${puppy.id}</p>
+      </div>
+      <img src=${puppy.imageUrl} alt="photo of ${puppy.name}">
+    </div>
+        `;
+      playerContainerHTML += pupHTML;
+    });
+    playerContainer.innerHTML = playerContainerHTML;
   } catch (err) {
     console.error("Uh oh, trouble rendering players!", err);
   }
