@@ -7,21 +7,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- import JavaScript -->
-  <script defer src="script.js"></script>
+
 
   <!-- import CSS -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <title>PuppyBowl</title>
 </head>
 
-<body>
+<body id="body">
 
-  <!-- form to add new players -->
-  <div id="new-player-form"></div>
 
-  <!-- container for all players -->
-  <div id="all-players-container"></div>
+
+  <main>
+    <div id="header">
+
+    </div>
+
+    <nav class="nav">
+      <a id="firstPage" href="./index.html"><i class="fa-solid fa-home"></i> Home</a>
+      <a id="playersList"><i class="fa-solid fa-list-ul"></i> All Players List</a>
+      <a id="newPlayerLink"><i class="fa-solid fa-dog"></i> Add New Player</a>
+    </nav>
+    <!-- form to add new players -->
+    <div id="new-player-form">
+      <div class="inputContainer">
+        <div class="inputs">
+          <span>Name</span><input id="name" type="text" placeholder="Name" class="inputGroup">
+
+          <span>Breed</span><input id="breed" type="text" placeholder="Breed" class="inputGroup">
+
+          <span>Image URL</span><input id="url" type="url" placeholder="https://example.com" class="inputGroup">
+
+          <span>Team ID</span><input id="teamID" type="number" placeholder="Team ID" class="inputGroup" max="999"
+            min="1" maxlength="3">
+
+
+          <section id="radio">
+            <span>Status</span><input name="status" id="bench" type="radio" checked><label
+              for="bench">Bench</label>&nbsp;
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <input name="status" id="field" type="radio"><label for="field">Field</label>
+          </section>
+
+
+          <button id="closeBTN" class="button">close</button>
+          <button id="SubmitBTN" class="button">Submit</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- container for all players -->
+    <div id="all-players-container">
+      <ul class="" id="playerList">
+
+      </ul>
+    </div>
+  </main>
+  <script src="script.js"></script>
 
 </body>
 
