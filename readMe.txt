@@ -1,0 +1,1 @@
+Hello, this exercise was Block 23. It was an exercise on connecting, retrieving, and sending data to an API in JavaScript. I also utilized history.state to create a single-page application.
